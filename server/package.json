@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts",
+    "auth:generate": "bunx --bun @better-auth/cli generate --output ./src/db/auth/schema.ts",
+    "drizzle:generate": "bunx --bun drizzle-kit generate",
+    "drizzle:migrate": "bunx --bun drizzle-kit migrate",
+    "drizzle:push": "bunx --bun drizzle-kit push"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^1.4.0",
+    "@elysiajs/openapi": "^1.4.11",
+    "drizzle-orm": "^0.44.5",
+    "elysia": "latest"
+  },
+  "devDependencies": {
+    "@libsql/client": "^0.15.15",
+    "@types/bun": "^1.2.22",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.31.4"
+  },
+  "module": "src/index.js"
+}
